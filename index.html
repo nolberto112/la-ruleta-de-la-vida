@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Ruleta de la Vida 🧠</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🎰 La Ruleta de la Vida</div>
+
+    <div class="player-info">
+        <span id="level">🧠 Nivel 1</span>
+        <span id="xp">⭐ 0 XP</span>
+    </div>
+</header>
+
+<main>
+
+    <!-- INICIO -->
+    <section id="homeScreen" class="screen active">
+
+        <div class="hero">
+            <h1>¿Qué tan rápido<br>puede pensar tu cerebro?</h1>
+
+            <p>
+                Gira la ruleta y enfrenta un desafío mental.
+            </p>
+
+            <div class="roulette-container">
+
+                <div class="pointer">▼</div>
+
+                <div id="roulette" class="roulette">
+
+                    <div class="segment s1">🧠</div>
+                    <div class="segment s2">🔢</div>
+                    <div class="segment s3">👀</div>
+                    <div class="segment s4">🧩</div>
+                    <div class="segment s5">🕵️</div>
+                    <div class="segment s6">⚡</div>
+                    <div class="segment s7">🔤</div>
+                    <div class="segment s8">🎯</div>
+
+                </div>
+
+            </div>
+
+            <button id="spinBtn" class="main-btn">
+                🎰 GIRAR RULETA
+            </button>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <span>🔥</span>
+                <strong id="streak">0</strong>
+                <small>Racha</small>
+            </div>
+
+            <div class="stat">
+                <span>🏆</span>
+                <strong id="score">0</strong>
+                <small>Puntos</small>
+            </div>
+
+            <div class="stat">
+                <span>🎮</span>
+                <strong id="gamesPlayed">0</strong>
+                <small>Partidas</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JUEGO -->
+    <section id="gameScreen" class="screen">
+
+        <div class="game-card">
+
+            <div id="category" class="category">
+                🧠 MEMORIA
+            </div>
+
+            <h2 id="gameTitle">Memoria rápida</h2>
+
+            <div id="timer" class="timer">
+                10
+            </div>
+
+            <div id="gameContent"></div>
+
+            <div id="answerArea"></div>
+
+            <button id="submitBtn" class="submit-btn">
+                COMPROBAR
+            </button>
+
+            <div id="result"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ESTADÍSTICAS -->
+    <section class="dashboard">
+
+        <h2>📊 Tu cerebro</h2>
+
+        <div class="brain-stats">
+
+            <div>
+                <span>🧠 Memoria</span>
+                <div class="bar">
+                    <div id="memoryBar"></div>
+                </div>
+            </div>
+
+            <div>
+                <span>🧩 Lógica</span>
+                <div class="bar">
+                    <div id="logicBar"></div>
+                </div>
+            </div>
+
+            <div>
+                <span>👀 Observación</span>
+                <div class="bar">
+                    <div id="observationBar"></div>
+                </div>
+            </div>
+
+            <div>
+                <span>⚡ Velocidad</span>
+                <div class="bar">
+                    <div id="speedBar"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
