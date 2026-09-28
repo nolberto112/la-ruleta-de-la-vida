@@ -3,153 +3,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>La Ruleta de la Vida 🧠</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <div class="logo">🎰 La Ruleta de la Vida</div>
 
-    <div class="player-info">
-        <span id="level">🧠 Nivel 1</span>
-        <span id="xp">⭐ 0 XP</span>
+    <div class="logo">
+        🎰 LA RULETA DE LA VIDA
     </div>
+
+    <div class="player">
+
+        <span id="level">
+            🧠 Nivel 1
+        </span>
+
+        <span id="xp">
+            ⭐ 0 XP
+        </span>
+
+    </div>
+
 </header>
+
 
 <main>
 
-    <!-- INICIO -->
-    <section id="homeScreen" class="screen active">
 
-        <div class="hero">
-            <h1>¿Qué tan rápido<br>puede pensar tu cerebro?</h1>
+<!-- ================= HOME ================= -->
 
-            <p>
-                Gira la ruleta y enfrenta un desafío mental.
-            </p>
+<section id="homeScreen" class="screen active">
 
-            <div class="roulette-container">
+    <div class="hero">
 
-                <div class="pointer">▼</div>
+        <div class="badge">
+            🧠 JUEGO MENTAL
+        </div>
 
-                <div id="roulette" class="roulette">
+        <h1>
+            ¿Qué tan rápida<br>
+            es tu mente?
+        </h1>
 
-                    <div class="segment s1">🧠</div>
-                    <div class="segment s2">🔢</div>
-                    <div class="segment s3">👀</div>
-                    <div class="segment s4">🧩</div>
-                    <div class="segment s5">🕵️</div>
-                    <div class="segment s6">⚡</div>
-                    <div class="segment s7">🔤</div>
-                    <div class="segment s8">🎯</div>
+        <p>
+            Gira la ruleta y demuestra lo que puedes hacer.
+        </p>
 
+
+        <!-- VIDAS -->
+
+        <div class="lives">
+
+            <span id="life1">❤️</span>
+            <span id="life2">❤️</span>
+            <span id="life3">❤️</span>
+
+        </div>
+
+
+        <!-- RULETA -->
+
+        <div class="roulette-container">
+
+            <div class="pointer">
+                ▼
+            </div>
+
+            <div id="roulette" class="roulette">
+
+                <div class="segment s1">
+                    🧠
+                </div>
+
+                <div class="segment s2">
+                    🔢
+                </div>
+
+                <div class="segment s3">
+                    👀
+                </div>
+
+                <div class="segment s4">
+                    🧩
+                </div>
+
+                <div class="segment s5">
+                    ⚡
+                </div>
+
+                <div class="segment s6">
+                    🔤
+                </div>
+
+                <div class="segment s7">
+                    🎯
+                </div>
+
+                <div class="segment s8">
+                    🕵️
                 </div>
 
             </div>
 
-            <button id="spinBtn" class="main-btn">
-                🎰 GIRAR RULETA
-            </button>
+        </div>
+
+
+        <button
+            id="spinBtn"
+            class="main-btn">
+
+            🎰 GIRAR RULETA
+
+        </button>
+
+
+        <div class="combo">
+
+            🔥 COMBO
+
+            <strong id="combo">
+                x0
+            </strong>
 
         </div>
 
-        <div class="stats">
-
-            <div class="stat">
-                <span>🔥</span>
-                <strong id="streak">0</strong>
-                <small>Racha</small>
-            </div>
-
-            <div class="stat">
-                <span>🏆</span>
-                <strong id="score">0</strong>
-                <small>Puntos</small>
-            </div>
-
-            <div class="stat">
-                <span>🎮</span>
-                <strong id="gamesPlayed">0</strong>
-                <small>Partidas</small>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- JUEGO -->
-    <section id="gameScreen" class="screen">
-
-        <div class="game-card">
-
-            <div id="category" class="category">
-                🧠 MEMORIA
-            </div>
-
-            <h2 id="gameTitle">Memoria rápida</h2>
-
-            <div id="timer" class="timer">
-                10
-            </div>
-
-            <div id="gameContent"></div>
-
-            <div id="answerArea"></div>
-
-            <button id="submitBtn" class="submit-btn">
-                COMPROBAR
-            </button>
-
-            <div id="result"></div>
-
-        </div>
-
-    </section>
+    </div>
 
 
     <!-- ESTADÍSTICAS -->
-    <section class="dashboard">
 
-        <h2>📊 Tu cerebro</h2>
+    <div class="stats">
 
-        <div class="brain-stats">
+        <div class="stat">
+
+            <span>🏆</span>
+
+            <strong id="score">
+                0
+            </strong>
+
+            <small>
+                Puntos
+            </small>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>🎮</span>
+
+            <strong id="gamesPlayed">
+                0
+            </strong>
+
+            <small>
+                Partidas
+            </small>
+
+        </div>
+
+
+        <div class="stat">
+
+            <span>🔥</span>
+
+            <strong id="bestCombo">
+                0
+            </strong>
+
+            <small>
+                Mejor combo
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GAME ================= -->
+
+<section
+    id="gameScreen"
+    class="screen">
+
+    <div class="game-card">
+
+
+        <div
+            id="difficulty"
+            class="difficulty">
+
+            🟢 FÁCIL
+
+        </div>
+
+
+        <div
+            id="category"
+            class="category">
+
+            🧠 LÓGICA
+
+        </div>
+
+
+        <h2 id="gameTitle">
+
+            Desafío mental
+
+        </h2>
+
+
+        <div
+            id="timer"
+            class="timer">
+
+            15
+
+        </div>
+
+
+        <div
+            id="gameContent"
+            class="game-content">
+
+        </div>
+
+
+        <div
+            id="answerArea">
+
+        </div>
+
+
+        <button
+            id="submitBtn"
+            class="submit-btn">
+
+            COMPROBAR
+
+        </button>
+
+
+        <div
+            id="result"
+            class="result">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GAME OVER ================= -->
+
+<section
+    id="gameOverScreen"
+    class="screen">
+
+    <div class="game-over">
+
+        <div class="skull">
+            💀
+        </div>
+
+        <h1>
+            SE ACABÓ
+        </h1>
+
+        <p>
+            Tu mente necesita descansar...
+        </p>
+
+
+        <div class="final-score">
+
+            <span>
+                PUNTUACIÓN
+            </span>
+
+            <strong id="finalScore">
+                0
+            </strong>
+
+        </div>
+
+
+        <div class="final-stats">
 
             <div>
-                <span>🧠 Memoria</span>
-                <div class="bar">
-                    <div id="memoryBar"></div>
-                </div>
+                ⭐
+                <strong id="finalXP">
+                    0
+                </strong>
+                XP
             </div>
 
             <div>
-                <span>🧩 Lógica</span>
-                <div class="bar">
-                    <div id="logicBar"></div>
-                </div>
-            </div>
-
-            <div>
-                <span>👀 Observación</span>
-                <div class="bar">
-                    <div id="observationBar"></div>
-                </div>
-            </div>
-
-            <div>
-                <span>⚡ Velocidad</span>
-                <div class="bar">
-                    <div id="speedBar"></div>
-                </div>
+                🔥
+                <strong id="finalCombo">
+                    0
+                </strong>
+                combo
             </div>
 
         </div>
 
-    </section>
+
+        <button
+            id="restartBtn"
+            class="main-btn">
+
+            🔄 VOLVER A JUGAR
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="dashboard">
+
+    <h2>
+        🧠 Tu cerebro
+    </h2>
+
+
+    <div class="brain-stats">
+
+
+        <div class="brain-stat">
+
+            <span>
+                🧠 Memoria
+            </span>
+
+            <div class="bar">
+
+                <div id="memoryBar"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="brain-stat">
+
+            <span>
+                🧩 Lógica
+            </span>
+
+            <div class="bar">
+
+                <div id="logicBar"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="brain-stat">
+
+            <span>
+                👀 Observación
+            </span>
+
+            <div class="bar">
+
+                <div id="observationBar"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="brain-stat">
+
+            <span>
+                ⚡ Velocidad
+            </span>
+
+            <div class="bar">
+
+                <div id="speedBar"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
 
 </main>
+
+
+<div
+    id="notification"
+    class="notification">
+
+</div>
+
 
 <script src="script.js"></script>
 
